@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareBridge24 | Elderly Nursing & Healthcare Assistance</title>
+    <meta
+      name="description"
+      content="Connect with verified nurses, caregivers, and physiotherapists for safe and reliable in-home elderly care."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container nav">
+        <a href="#" class="brand">
+          <span class="brand-dot"></span>
+          CareBridge24
+        </a>
+        <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
+        <nav id="navLinks" class="nav-links">
+          <div class="nav-menu">
+            <a href="#services">Services</a>
+            <a href="#notifications">Notifications</a>
+            <a href="#caregivers">Caregivers</a>
+            <a href="#process">How It Works</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="nav-actions">
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+            <button class="btn btn-small btn-ghost" id="headerLoginBtn">Login</button>
+            <button class="btn btn-small" id="headerRegisterBtn">Register</button>
+            <button class="btn btn-small" id="bookBtn">Book Now</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Trusted Home Care For Seniors</p>
+            <h1>Elderly Nursing & Healthcare Assistance, Simplified</h1>
+            <p class="lead">
+              Find verified nurses, attendants, and physiotherapists for safe,
+              reliable, and compassionate in-home care.
+            </p>
+            <div class="hero-actions">
+              <button class="btn" id="getStartedBtn">Get Started</button>
+              <a href="#services" class="btn btn-ghost">Explore Services</a>
+            </div>
+            <div class="hero-auth">
+              <div class="auth-email">
+                <input id="authEmailInput" type="email" placeholder="Continue with email" />
+                <button class="btn btn-small" id="continueEmailBtn">Continue</button>
+              </div>
+            </div>
+            <div class="stats">
+              <article class="stat-card">
+                <strong>3,500+</strong>
+                <span>Families Served</span>
+              </article>
+              <article class="stat-card">
+                <strong>900+</strong>
+                <span>Verified Caregivers</span>
+              </article>
+              <article class="stat-card">
+                <strong>1,200+</strong>
+                <span>Care Sessions Completed</span>
+              </article>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h3>Book in 3 Steps</h3>
+            <ol>
+              <li>Create patient profile</li>
+              <li>Pick service and schedule</li>
+              <li>Get matched with verified caregiver</li>
+            </ol>
+            <button class="btn btn-full" id="startBookingBtn">Start Booking</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Our Services</p>
+            <h2>Care plans built around every need</h2>
+          </div>
+          <div class="grid cards-4">
+            <article class="card">
+              <h3>Nursing Care</h3>
+              <p>Clinical support, vitals monitoring, and medication guidance at home.</p>
+            </article>
+            <article class="card">
+              <h3>Elderly Attendant</h3>
+              <p>Daily assistance for mobility, hygiene, meals, and companionship.</p>
+            </article>
+            <article class="card">
+              <h3>Physiotherapy</h3>
+              <p>Recovery-focused sessions designed for strength and movement.</p>
+            </article>
+            <article class="card">
+              <h3>Post-Hospital Care</h3>
+              <p>Short and long-term recovery support after discharge.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="notifications" class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Notifications & Planning</p>
+            <h2>Stay informed with alerts and calendar view</h2>
+          </div>
+          <div class="notification-tabs">
+            <button class="tab-btn active" data-target="notificationsPane">Notifications</button>
+            <button class="tab-btn" data-target="calendarPane">Calendar</button>
+          </div>
+          <div class="tab-content">
+            <div id="notificationsPane" class="tab-panel active">
+              <article class="notification-card success">
+                <h4>New caregiver match confirmed</h4>
+                <p>Your request for daily support has been assigned to a verified caregiver starting tomorrow.</p>
+              </article>
+              <article class="notification-card info">
+                <h4>Booking reminder</h4>
+                <p>Don't forget to review medication and meal preferences with your caregiver before the first session.</p>
+              </article>
+              <article class="notification-card alert">
+                <h4>Appointment update</h4>
+                <p>Your physiotherapy session has been moved to 11:00 AM on Thursday. Please confirm if this works.</p>
+              </article>
+            </div>
+            <div id="calendarPane" class="tab-panel">
+              <div class="calendar-card">
+                <div class="calendar-header">
+                  <button id="calendarPrev" class="calendar-nav" type="button">‹</button>
+                  <div id="calendarLabel" class="calendar-title"></div>
+                  <button id="calendarNext" class="calendar-nav" type="button">›</button>
+                </div>
+                <div class="calendar-grid calendar-weekdays">
+                  <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                </div>
+                <div id="calendarDays" class="calendar-grid calendar-days"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="caregivers" class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Featured Professionals</p>
+            <h2>Verified caregivers you can trust</h2>
+          </div>
+          <div class="grid cards-3">
+            <article class="caregiver" data-name="Sarah Khan" data-role="Senior Nurse" data-experience="8 years" data-languages="English, Hindi" data-rating="4.9" data-bio="Experienced senior nurse specialized in post-hospital care, medication management, and elderly mobility support." data-availability="Weekdays 9am–5pm">
+              <div class="caregiver-top">
+                <img src="https://i.pravatar.cc/120?img=47" alt="Sarah Khan" class="profile-img" />
+                <span class="verified-badge">Verified</span>
+              </div>
+              <h3>Sarah Khan</h3>
+              <p>Senior Nurse • 8 years experience</p>
+              <div class="caregiver-meta">
+                <span class="rating">4.9 ★</span>
+                <button class="btn btn-small view-profile">View profile</button>
+              </div>
+            </article>
+            <article class="caregiver" data-name="Arjun Rao" data-role="Physiotherapist" data-experience="6 years" data-languages="English, Tamil" data-rating="4.8" data-bio="Rehab specialist focusing on mobility recovery and personalized exercise plans for seniors." data-availability="Mon, Wed, Fri 10am–4pm">
+              <div class="caregiver-top">
+                <img src="https://i.pravatar.cc/120?img=12" alt="Arjun Rao" class="profile-img" />
+                <span class="verified-badge">Verified</span>
+              </div>
+              <h3>Arjun Rao</h3>
+              <p>Physiotherapist • Rehab Specialist</p>
+              <div class="caregiver-meta">
+                <span class="rating">4.8 ★</span>
+                <button class="btn btn-small view-profile">View profile</button>
+              </div>
+            </article>
+            <article class="caregiver" data-name="Nazia Malik" data-role="Elderly Attendant" data-experience="5 years" data-languages="English, Urdu" data-rating="4.9" data-bio="Compassionate attendant experienced in dementia care, daily routines, and companion support." data-availability="Weekends 8am–2pm">
+              <div class="caregiver-top">
+                <img src="https://i.pravatar.cc/120?img=65" alt="Nazia Malik" class="profile-img" />
+                <span class="verified-badge">Verified</span>
+              </div>
+              <h3>Nazia Malik</h3>
+              <p>Elderly Attendant • Dementia Care</p>
+              <div class="caregiver-meta">
+                <span class="rating">4.9 ★</span>
+                <button class="btn btn-small view-profile">View profile</button>
+              </div>
+            </article>
+          </div>
+          <div class="caregiver-benefits">
+            <h3>More than credentials</h3>
+            <p>Our caregivers bring experience, compassion, and daily communication so your senior stays safe, engaged, and supported.</p>
+            <div class="grid cards-3 caregiver-details">
+              <article class="detail-card">
+                <h4>Personalized wellness plans</h4>
+                <p>Routine check-ins, medication reminders, and mobility support tailored to each elder’s lifestyle.</p>
+              </article>
+              <article class="detail-card">
+                <h4>Family feedback built in</h4>
+                <p>Daily updates and care notes keep families informed and connected with every visit.</p>
+              </article>
+              <article class="detail-card">
+                <h4>Trusted senior support</h4>
+                <p>Verified professionals trained for dementia care, post-hospital recovery, and mobility assistance.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="healthy-routine" class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Daily Wellness</p>
+            <h2>Healthy routine plans for better daily care</h2>
+          </div>
+          <div class="grid cards-3 routine-grid">
+            <article class="routine-card">
+              <div class="routine-icon">🥗</div>
+              <h3>Smart nutrition</h3>
+              <p>Balanced meals, hydration reminders, and easy snack ideas to keep energy steady all day.</p>
+            </article>
+            <article class="routine-card">
+              <div class="routine-icon">🧘</div>
+              <h3>Gentle movement</h3>
+              <p>Daily mobility routines and guided exercise tips to improve strength, balance, and comfort.</p>
+            </article>
+            <article class="routine-card">
+              <div class="routine-icon">🧠</div>
+              <h3>Mindful wellbeing</h3>
+              <p>Relaxation practices, meaningful activities, and easy habits for better sleep and mood.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" class="section">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">How It Works</p>
+            <h2>Simple process. Reliable care.</h2>
+          </div>
+          <div class="timeline">
+            <div class="step"><span>1</span>Create account and patient profile</div>
+            <div class="step"><span>2</span>Select service, date, and duration</div>
+            <div class="step"><span>3</span>Caregiver confirms your request</div>
+            <div class="step"><span>4</span>Track updates until completion</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Testimonials & Feedback</p>
+            <h2>Families trust our care and healthy routines</h2>
+          </div>
+          <div class="grid cards-3">
+            <article class="quote">
+              "Finding trusted care was hard. CareBridge24 made it stress-free with clear updates and a daily routine plan."
+              <cite>- Priya S.</cite>
+            </article>
+            <article class="quote">
+              "The caregiver checked on meals, exercises, and my father’s mood every day. The feedback was excellent."
+              <cite>- Rakesh M.</cite>
+            </article>
+            <article class="quote">
+              "Great for long-term support and real care guidance. The healthy routine suggestions helped us stay consistent."
+              <cite>- Ayesha K.</cite>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section section-alt">
+        <div class="container">
+          <div class="section-title">
+            <p class="eyebrow">Common Questions</p>
+            <h2>Answers families ask most often</h2>
+          </div>
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                How do you verify caregivers?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Each caregiver completes criminal background checks, skills and certification verification, live interviews, and ongoing quality reviews before they join our network.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                Can we request the same caregiver again?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. You can ask for the same caregiver on future visits whenever that caregiver is available, so your family enjoys continuity and trust.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                What happens after booking?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>After booking, we confirm your schedule, send caregiver details, and provide daily care notes and updates throughout the service period.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                Is live support available?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Yes. Live chat is available for questions about caregivers, care plans, appointments, and booking help any time during service hours.</p>
+              </div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button">
+                Can caregivers support dementia care?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <p>Absolutely. Our caregivers are trained to support dementia care with safe routines, memory-friendly activities, and compassionate supervision.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="cta">
+        <div class="container cta-wrap">
+          <div>
+            <h2>Ready to arrange quality elderly care?</h2>
+            <p>Book trusted in-home care services in minutes.</p>
+          </div>
+          <button class="btn" id="bookServiceBtn">Book a Service</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-wrap">
+        <div class="footer-brand">
+          <p>© 2026 CareBridge24</p>
+          <p>Trusted elderly care, verified caregivers, and family-focused support.</p>
+        </div>
+        
+        <div class="footer-links-group">
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#caregivers">Caregivers</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer-links">
+            <a href="#contact">Book Now</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button id="openChatBtn" class="chat-btn">Live Chat</button>
+
+    <div id="chatWidget" class="chat-widget">
+      <div class="chat-header">
+        <div>
+          <strong>Live Support</strong>
+          <p>Ask about caregivers, routines, or bookings.</p>
+        </div>
+        <button id="closeChatBtn" class="chat-close" aria-label="Close chat">×</button>
+      </div>
+      <div id="chatMessages" class="chat-messages">
+        <div class="chat-message bot">Hi! I’m here to help. What would you like to know?</div>
+      </div>
+      <div class="chat-input-wrap">
+        <input id="chatInput" class="chat-input" type="text" placeholder="Type your question..." />
+        <button id="chatSendBtn" class="chat-send">Send</button>
+      </div>
+    </div>
+
+    <!-- Reminder Modal -->
+    <div id="reminderModal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-target="reminderModal">&times;</span>
+        <h3>Set Reminder</h3>
+        <form id="reminderForm">
+          <div class="form-group">
+            <label for="reminderTitle">Title</label>
+            <input type="text" id="reminderTitle" required />
+          </div>
+          <div class="form-group">
+            <label for="reminderDate">Date</label>
+            <input type="date" id="reminderDate" required />
+          </div>
+          <div class="form-group">
+            <label for="reminderTime">Time</label>
+            <input type="time" id="reminderTime" required />
+          </div>
+          <div class="form-group">
+            <label for="reminderRepeat">Repeat</label>
+            <select id="reminderRepeat">
+              <option value="none">None</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </div>
+          <div class="profile-actions">
+            <button class="btn btn-small" type="button" id="cancelReminder">Cancel</button>
+            <button class="btn btn-small btn-primary" type="submit">Save Reminder</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Book a Service</h2>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Service Type</label>
+            <select id="service" required>
+              <option value="">Select Service</option>
+              <option value="nursing">Nursing Care</option>
+              <option value="attendant">Elderly Attendant</option>
+              <option value="physiotherapy">Physiotherapy</option>
+              <option value="post-hospital">Post-Hospital Care</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" required>
+          </div>
+          <div class="form-group">
+            <label><input type="checkbox" id="telehealth" /> Telehealth (video consult)</label>
+          </div>
+          <div class="form-group">
+            <label for="message">Additional Notes</label>
+            <textarea id="message" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn">Submit Booking</button>
+        </form>
+      </div>
+    </div>
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+      <div class="modal-content auth-modal">
+        <span class="close" data-target="authModal">&times;</span>
+        <h2>Account access</h2>
+        <div class="auth-tabs">
+          <button id="loginTab" type="button" class="auth-tab active">Login</button>
+          <button id="registerTab" type="button" class="auth-tab">Register</button>
+        </div>
+        <div class="auth-panel" id="loginPanel">
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+                <div style="display:flex;gap:8px;align-items:center;">
+                  <input type="password" id="loginPassword" required style="flex:1;" />
+                  <button type="button" class="pw-toggle" data-target="loginPassword" aria-label="Toggle password">Show</button>
+                </div>
+            </div>
+              <div class="form-group">
+                <label><input type="checkbox" id="loginRemember" /> Remember me</label>
+              </div>
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-panel hidden" id="registerPanel">
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="registerName">Full Name</label>
+              <input type="text" id="registerName" required />
+            </div>
+            <div class="form-group">
+              <label for="registerEmail">Email</label>
+              <input type="email" id="registerEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="registerPassword">Password</label>
+              <div style="display:flex;gap:8px;align-items:center;">
+                <input type="password" id="registerPassword" required style="flex:1;" />
+                <button type="button" class="pw-toggle" data-target="registerPassword" aria-label="Toggle password">Show</button>
+              </div>
+              <div id="pwStrength" aria-hidden="true" style="margin-top:8px;font-size:0.9rem;color:var(--muted);"></div>
+            </div>
+            <div class="form-group">
+              <label><input type="checkbox" id="registerRemember" /> Keep me signed in</label>
+            </div>
+            <button type="submit" class="btn">Create account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Caregiver Profile Modal -->
+    <div id="profileModal" class="modal">
+      <div class="modal-content profile-modal">
+        <span class="close" data-target="profileModal">&times;</span>
+        <div class="profile-header">
+          <img id="profileImg" src="https://i.pravatar.cc/120" alt="profile" class="profile-img-large" />
+          <div>
+            <h3 id="profileName">Name</h3>
+            <p id="profileRole">Role • Experience</p>
+            <div class="profile-meta"><span id="profileRating">4.9 ★</span> <span id="profileLanguages">English</span></div>
+          </div>
+        </div>
+        <p id="profileBio"></p>
+        <div class="profile-footer">
+          <div><strong>Availability:</strong> <span id="profileAvailability"></span></div>
+          <div class="profile-actions">
+            <button class="btn btn-small" id="contactBtn">Contact</button>
+            <button class="btn btn-small" id="setReminderBtn">Set reminder</button>
+            <button class="btn btn-small btn-primary" id="bookWithBtn">Book with this caregiver</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
